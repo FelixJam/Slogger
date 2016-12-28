@@ -1,0 +1,1857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Slogger</title><link href="https://felixjam.github.io/Slogger/" rel="alternate"></link><link href="https://felixjam.github.io/Slogger/feeds/posts.atom.xml" rel="self"></link><id>https://felixjam.github.io/Slogger/</id><updated>2016-12-08T20:00:00+10:00</updated><entry><title>First Post</title><link href="https://felixjam.github.io/Slogger/Swellnet-scraping-notes.html" rel="alternate"></link><published>2016-12-08T20:00:00+10:00</published><updated>2016-12-08T20:00:00+10:00</updated><author><name>FJ</name></author><id>tag:felixjam.github.io,2016-12-08:Slogger/Swellnet-scraping-notes.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Swellnet-GC-Surf-Report-Scraper"&gt;Swellnet GC Surf Report Scraper&lt;a class="anchor-link" href="#Swellnet-GC-Surf-Report-Scraper"&gt;¶&lt;/a&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [93]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"http://www.swellnet.com/reports/australia/tasmania/south-arm"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [94]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'html.parser'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+
+&lt;!--[if IEMobile 7]&gt;&lt;html class="iem7"  lang="en" dir="ltr"&gt;&lt;![endif]--&gt;
+&lt;!--[if lte IE 6]&gt;&lt;html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"&gt;&lt;![endif]--&gt;
+&lt;!--[if (IE 7)&amp;(!IEMobile)]&gt;&lt;html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;&lt;html class="lt-ie9"  lang="en" dir="ltr"&gt;&lt;![endif]--&gt;
+&lt;!--[if (gte IE 9)|(gt IEMobile 7)]&gt;&lt;!--&gt;&lt;html dir="ltr" lang="en"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;head profile="http://www.w3.org/1999/xhtml/vocab"&gt;
+&lt;meta charset="utf-8" /&gt;
+&lt;link href="http://www.swellnet.com/profiles/swellnet/themes/swellzen/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" /&gt;
+&lt;link href="http://www.swellnet.com/reports/australia/queensland/gold-coast" rel="canonical" /&gt;
+&lt;script&gt;var _sf_startpt=(new Date()).getTime();&lt;/script&gt;
+&lt;meta content="Drupal 7 (http://drupal.org)" name="Generator" /&gt;
+&lt;title&gt;Gold Coast Detailed Surf Report, Surf Photos, Live Winds, Tides and Weather | Swellnet
+&lt;meta content="width" name="MobileOptimized"&gt;
+&lt;meta content="true" name="HandheldFriendly"&gt;
+&lt;meta content="width=device-width, initial-scale=1" name="viewport"&gt;
+&lt;meta content="on" http-equiv="cleartype"&gt;
+&lt;link href="http://www.swellnet.com/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all" rel="stylesheet" type="text/css" /&gt;
+&lt;link href="http://www.swellnet.com/sites/default/files/css/css_QnDqumlAmBiA-LkPKOOEj-wMlRQlYuHQdMmPGFs03GQ.css" media="all" rel="stylesheet" type="text/css" /&gt;
+&lt;link href="http://www.swellnet.com/sites/default/files/css/css_4DIoYbisqPpzxTYG-0GAlyMLG2v07ktQmbd0Sqg3tec.css" media="all" rel="stylesheet" type="text/css" /&gt;
+&lt;link href="http://www.swellnet.com/sites/default/files/css/css_J7V1vEUW0UYrQjKgJoEUjpSykKGrObqsxy9LI05iXPM.css" media="all" rel="stylesheet" type="text/css" /&gt;
+&lt;link href="http://www.swellnet.com/sites/default/files/css/css_Ri2FH9Ch-zGPzCuNQE4HpUyoP35huV2jIp99X5aKHSQ.css" media="all" rel="stylesheet" type="text/css" /&gt;
+&lt;script src="http://www.swellnet.com/sites/default/files/js/js_MG2mAeTPw6UhklY_SgV9St7ugWHPu3aFJezoNDTlCOA.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.swellnet.com/sites/default/files/js/js_0qGD1CqGsDpO1yJ1qzckatKYx8lDESM0HyyA0gOUh_k.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.swellnet.com/sites/default/files/js/js_uvgUomgWRDecmOPO_7f75pcoYGSMgROXSc-zcnF9t5Y.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.swellnet.com/sites/default/files/js/js_eyXcrJB9cRASZLL4ZUYHzxYhTD3GGZaY7miuLPQuF6s.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.swellnet.com/sites/default/files/js/js_1I63EV2Un02YeSe_qhYfgYz2RuUCae25XoFp8zX-d6w.js"&gt;&lt;/script&gt;
+&lt;script&gt;jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"swellzen","theme_token":"6HJ2VZl4sAhPRNW_ppsnXHw7GkcwFUNWNb_S562cLl8","js":{"profiles\/swellnet\/modules\/contrib\/jquery_update\/replace\/jquery\/1.5\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"misc\/ui\/jquery.ui.accordion.min.js":1,"profiles\/swellnet\/modules\/contrib\/comment_notify\/comment_notify.js":1,"profiles\/swellnet\/modules\/contrib\/extlink\/extlink.js":1,"profiles\/swellnet\/modules\/contrib\/quote\/quote.js":1,"profiles\/swellnet\/modules\/custom\/swellnet_location\/swellnet_location_report\/js\/swellnet_report.js":1,"profiles\/swellnet\/modules\/custom\/swellnet_location\/swellnet_location_report\/js\/2D.js":1,"profiles\/swellnet\/modules\/custom\/swellnet_location\/swellnet_location_report\/js\/swellnet_report_tides.js":1,"profiles\/swellnet\/modules\/custom\/swellnet_location\/swellnet_location_report\/js\/swellnet_report_wind.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/script.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/fresco\/fresco.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/formalize\/jquery.formalize.legacy.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/tipsy\/jquery.tipsy.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/d3\/d3.v3.min.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/colorbox\/jquery.colorbox-min.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/flexslider\/jquery.flexslider-min.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/masonry\/masonry.pkgd.min.js":1,"profiles\/swellnet\/themes\/swellzen\/js\/lib\/imagesloaded\/imagesloaded.pkgd.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"profiles\/swellnet\/modules\/contrib\/comment_notify\/comment_notify.css":1,"modules\/comment\/comment.css":1,"profiles\/swellnet\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/swellnet\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"profiles\/swellnet\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"profiles\/swellnet\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/swellnet\/modules\/contrib\/video_filter\/video_filter.css":1,"profiles\/swellnet\/modules\/contrib\/extlink\/extlink.css":1,"modules\/forum\/forum.css":1,"profiles\/swellnet\/modules\/contrib\/views\/css\/views.css":1,"profiles\/swellnet\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"profiles\/swellnet\/modules\/contrib\/chartbeat\/chartbeat.css":1,"profiles\/swellnet\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/swellnet\/modules\/contrib\/panels\/css\/panels.css":1,"profiles\/swellnet\/modules\/contrib\/quote\/quote.css":1,"profiles\/swellnet\/themes\/swellzen\/layouts\/sixthree\/sixthree.css":1,"profiles\/swellnet\/themes\/zen\/system.menus.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/normalize.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/layouts\/fixed-width.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/tabs.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/pages.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/blocks.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/navigation.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/views-styles.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/nodes.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/comments.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/forms.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/fields.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/panels.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/popup-announcements.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/style.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/users.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/print.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/wams.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/forecast.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/report.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/lib\/fresco\/fresco.css":1,"profiles\/swellnet\/themes\/swellzen\/css\/lib\/tipsy\/tipsy.css":1}},"chartbeat":{"uid":10032,"domain":"www.swellnet.com","useCanonical":true,"noCookies":false},"quote_nest":"2","video_filter":{"url":{"ckeditor":"\/video_filter\/dashboard\/ckeditor"},"instructions_url":"\/video_filter\/instructions","modulepath":"profiles\/swellnet\/modules\/contrib\/video_filter"},"swellnet":{"before":1480886917,"start":1480973317,"end":1481059717,"offset":36000,"wind":{"1480971600":{"timestamp":1480971600,"time":"9:00pm","day":"Mon","direction":"350","label":"N","speed":"13","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480968000":{"timestamp":1480968000,"time":"8:00pm","day":"Mon","direction":"350","label":"N","speed":"13","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480964400":{"timestamp":1480964400,"time":"7:00pm","day":"Mon","direction":"340","label":"NNW","speed":"14","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480960800":{"timestamp":1480960800,"time":"6:00pm","day":"Mon","direction":"350","label":"N","speed":"17","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#d9d801"},"1480957200":{"timestamp":1480957200,"time":"5:00pm","day":"Mon","direction":"360","label":"N","speed":"17","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#d9d801"},"1480953600":{"timestamp":1480953600,"time":"4:00pm","day":"Mon","direction":"360","label":"N","speed":"19","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#d9d801"},"1480950000":{"timestamp":1480950000,"time":"3:00pm","day":"Mon","direction":"10","label":"N","speed":"19","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#d9d801"},"1480946400":{"timestamp":1480946400,"time":"2:00pm","day":"Mon","direction":"10","label":"N","speed":"20","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#da0000"},"1480942800":{"timestamp":1480942800,"time":"1:00pm","day":"Mon","direction":"10","label":"N","speed":"22","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#da0000"},"1480939200":{"timestamp":1480939200,"time":"12:00pm","day":"Mon","direction":"10","label":"N","speed":"20","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#da0000"},"1480935600":{"timestamp":1480935600,"time":"11:00am","day":"Mon","direction":"360","label":"N","speed":"20","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#da0000"},"1480932000":{"timestamp":1480932000,"time":"10:00am","day":"Mon","direction":"360","label":"N","speed":"17","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#d9d801"},"1480928400":{"timestamp":1480928400,"time":"9:00am","day":"Mon","direction":"350","label":"N","speed":"15","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#d9d801"},"1480924800":{"timestamp":1480924800,"time":"8:00am","day":"Mon","direction":"350","label":"N","speed":"16","layout":{"size":"16px","left":"9px","top":"9px"},"colour":"#d9d801"},"1480921200":{"timestamp":1480921200,"time":"7:00am","day":"Mon","direction":"350","label":"N","speed":"13","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480917600":{"timestamp":1480917600,"time":"6:00am","day":"Mon","direction":"350","label":"N","speed":"11","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480914000":{"timestamp":1480914000,"time":"5:00am","day":"Mon","direction":"350","label":"N","speed":"11","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480910400":{"timestamp":1480910400,"time":"4:00am","day":"Mon","direction":"350","label":"N","speed":"11","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480906800":{"timestamp":1480906800,"time":"3:00am","day":"Mon","direction":"350","label":"N","speed":"14","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480903200":{"timestamp":1480903200,"time":"2:00am","day":"Mon","direction":"350","label":"N","speed":"11","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480899600":{"timestamp":1480899600,"time":"1:00am","day":"Mon","direction":"350","label":"N","speed":"11","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480896000":{"timestamp":1480896000,"time":"12:00am","day":"Mon","direction":"360","label":"N","speed":"9","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#000c70"},"1480892400":{"timestamp":1480892400,"time":"11:00pm","day":"Sun","direction":"360","label":"N","speed":"10","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"},"1480888800":{"timestamp":1480888800,"time":"10:00pm","day":"Sun","direction":"350","label":"N","speed":"11","layout":{"size":"12px","left":"13px","top":"12px"},"colour":"#00d900"}},"tides":{"1480897560":{"timestamp":1480897560,"original_time":"2016-12-05T00:26","time":"12:26am","day":"Mon","type":"High","height":"1.04"},"1480917720":{"timestamp":1480917720,"original_time":"2016-12-05T06:02","time":"6:02am","day":"Mon","type":"Low","height":"0.43"},"1480942560":{"timestamp":1480942560,"original_time":"2016-12-05T12:56","time":"12:56pm","day":"Mon","type":"High","height":"1.45"},"1480966680":{"timestamp":1480966680,"original_time":"2016-12-05T19:38","time":"7:38pm","day":"Mon","type":"Low","height":"0.41"},"1480987620":{"timestamp":1480987620,"original_time":"2016-12-06T01:27","time":"1:27am","day":"Tue","type":"High","height":"1.03"},"1481007540":{"timestamp":1481007540,"original_time":"2016-12-06T06:59","time":"6:59am","day":"Tue","type":"Low","height":"0.49"},"1481032080":{"timestamp":1481032080,"original_time":"2016-12-06T13:48","time":"1:48pm","day":"Tue","type":"High","height":"1.41"},"1481056380":{"timestamp":1481056380,"original_time":"2016-12-06T20:33","time":"8:33pm","day":"Tue","type":"Low","height":"0.40"},"1481078280":{"timestamp":1481078280,"original_time":"2016-12-07T02:38","time":"2:38am","day":"Wed","type":"High","height":"1.06"},"1481097960":{"timestamp":1481097960,"original_time":"2016-12-07T08:06","time":"8:06am","day":"Wed","type":"Low","height":"0.53"},"1481122020":{"timestamp":1481122020,"original_time":"2016-12-07T14:47","time":"2:47pm","day":"Wed","type":"High","height":"1.37"},"1481146260":{"timestamp":1481146260,"original_time":"2016-12-07T21:31","time":"9:31pm","day":"Wed","type":"Low","height":"0.37"},"1481168940":{"timestamp":1481168940,"original_time":"2016-12-08T03:49","time":"3:49am","day":"Thu","type":"High","height":"1.13"},"1481188920":{"timestamp":1481188920,"original_time":"2016-12-08T09:22","time":"9:22am","day":"Thu","type":"Low","height":"0.55"},"1481212260":{"timestamp":1481212260,"original_time":"2016-12-08T15:51","time":"3:51pm","day":"Thu","type":"High","height":"1.35"},"1481236140":{"timestamp":1481236140,"original_time":"2016-12-08T22:29","time":"10:29pm","day":"Thu","type":"Low","height":"0.32"},"1481259240":{"timestamp":1481259240,"original_time":"2016-12-09T04:54","time":"4:54am","day":"Fri","type":"High","height":"1.24"},"1481279940":{"timestamp":1481279940,"original_time":"2016-12-09T10:39","time":"10:39am","day":"Fri","type":"Low","height":"0.52"},"1481302440":{"timestamp":1481302440,"original_time":"2016-12-09T16:54","time":"4:54pm","day":"Fri","type":"High","height":"1.34"},"1481325720":{"timestamp":1481325720,"original_time":"2016-12-09T23:22","time":"11:22pm","day":"Fri","type":"Low","height":"0.25"},"1481349060":{"timestamp":1481349060,"original_time":"2016-12-10T05:51","time":"5:51am","day":"Sat","type":"High","height":"1.38"},"1481370600":{"timestamp":1481370600,"original_time":"2016-12-10T11:50","time":"11:50am","day":"Sat","type":"Low","height":"0.45"},"1481392440":{"timestamp":1481392440,"original_time":"2016-12-10T17:54","time":"5:54pm","day":"Sat","type":"High","height":"1.34"},"1481415120":{"timestamp":1481415120,"original_time":"2016-12-11T00:12","time":"12:12am","day":"Sun","type":"Low","height":"0.17"},"1481438700":{"timestamp":1481438700,"original_time":"2016-12-11T06:45","time":"6:45am","day":"Sun","type":"High","height":"1.52"},"1481460900":{"timestamp":1481460900,"original_time":"2016-12-11T12:55","time":"12:55pm","day":"Sun","type":"Low","height":"0.37"},"1481482200":{"timestamp":1481482200,"original_time":"2016-12-11T18:50","time":"6:50pm","day":"Sun","type":"High","height":"1.34"},"1481504400":{"timestamp":1481504400,"original_time":"2016-12-12T01:00","time":"1:00am","day":"Mon","type":"Low","height":"0.11"}}},"urlIsAjaxTrusted":{"\/reports\/australia\/queensland\/gold-coast":true},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"}});&lt;/script&gt;
+&lt;!--[if lt IE 9]&gt;
+    &lt;script src="/profiles/swellnet/themes/zen/js/html5-respond.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MJFRTK4');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+&lt;/meta&gt;&lt;/meta&gt;&lt;/meta&gt;&lt;/meta&gt;
+&lt;body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-445 node-type-surf-location panels-driven-layout main-colspan-9 main-nested-container section-reports page-panels" id="swellnet-body"&gt;
+&lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MJFRTK4" style="display:none;visibility:hidden" width="0"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+&lt;p id="skip-link"&gt;
+&lt;a class="element-invisible element-focusable" href="#main-menu"&gt;Jump to navigation&lt;/a&gt;
+&lt;/p&gt;
+&lt;div id="wrapper"&gt;
+&lt;div id="prologue"&gt;
+&lt;div id="user-bar"&gt;
+&lt;div class="block block-swellnet-subscription first odd" id="block-swellnet-subscription-pro-link"&gt;
+&lt;h2 class="block__title block-title"&gt;Pro Link&lt;/h2&gt;
+&lt;a href="/pro/subscribe"&gt;Get Swellnet PRO, and score $40 of surfing essentials for free&lt;/a&gt;
+&lt;/div&gt;
+&lt;nav id="site-user-menu"&gt;
+&lt;ul class="menu"&gt;&lt;li class="menu__item is-leaf first leaf" id="nav-log-in"&gt;&lt;a class="menu__link" href="/user/login"&gt;Log in&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf last leaf" id="nav-register"&gt;&lt;a class="menu__link" href="/user/register"&gt;Register&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/nav&gt; &lt;/div&gt;
+&lt;/div&gt; &lt;!-- /#prologue --&gt;
+&lt;div id="page"&gt;
+&lt;div id="header" role="banner"&gt;
+&lt;span class="site-logo"&gt;
+&lt;a href="/" id="logo" rel="home" title="Return to the Swellnet home page"&gt;&lt;img alt="Swellnet logo" src="http://www.swellnet.com/profiles/swellnet/themes/swellzen/logo.png" /&gt;&lt;/a&gt;&lt;/span&gt;&lt;div class="nav" id="site-main-menu"&gt;
+&lt;h2 class="block__title block-title"&gt;Main menu&lt;/h2&gt;
+&lt;ul class="menu"&gt;&lt;li class="menu__item is-leaf first leaf" id="nav-home"&gt;&lt;a class="menu__link" href="/welcome" title="Home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf" id="nav-surf-reports-and-forecasts"&gt;&lt;a class="menu__link" href="/reports"&gt;Surf Reports &amp;amp; Forecasts&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf" id="nav-surfcams"&gt;&lt;a class="menu__link" href="/surfcams"&gt;Surfcams&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf" id="nav-news"&gt;&lt;a class="menu__link" href="/news"&gt;News&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf" id="nav-photos"&gt;&lt;a class="menu__link" href="/photos"&gt;Photos&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf last leaf" id="nav-forum"&gt;&lt;a class="menu__link" href="/forum" title=""&gt;Forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;div class="boxes-box" id="boxes-box-swellnet_adblock_leaderboard"&gt;&lt;div class="boxes-box-content"&gt;&lt;span class="mcnamf" title="728x90"&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt; &lt;/div&gt;
+&lt;div id="main-section"&gt;
+&lt;div id="main" role="main"&gt;
+&lt;div class="layout-sixthree section panel-left"&gt;
+&lt;div class="panel-pane pane-page-breadcrumb"&gt;
+&lt;nav class="breadcrumb" role="navigation"&gt;&lt;h2 class="element-invisible"&gt;You are here&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt; › &lt;/li&gt;&lt;li&gt;&lt;a href="/reports"&gt;Surf Reports &amp;amp; Forecasts&lt;/a&gt; › &lt;/li&gt;&lt;li&gt;&lt;a href="/reports/australia"&gt;Australia&lt;/a&gt; › &lt;/li&gt;&lt;li&gt;&lt;a href="/reports/australia/queensland"&gt;Queensland&lt;/a&gt; › &lt;/li&gt;&lt;li&gt;Gold Coast&lt;/li&gt;&lt;/ol&gt;&lt;/nav&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-page-tabs"&gt;
+&lt;div id="tabs"&gt;&lt;h2 class="element-invisible"&gt;Primary tabs&lt;/h2&gt;&lt;ul class="tabs-primary tabs primary"&gt;&lt;li class="active"&gt;&lt;a class="active" href="/reports/australia/queensland/gold-coast"&gt;Surf Report&lt;span class="element-invisible"&gt;(active tab)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/reports/australia/queensland/gold-coast/forecast"&gt;Surf Forecast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/reports/australia/queensland/gold-coast/wams"&gt;WAMS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/reports/australia/queensland/gold-coast/forecaster-notes"&gt;Forecaster Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-views-panes pane-surf-reports-panel-pane"&gt;
+&lt;div class="view view-surf-reports view-id-surf_reports view-display-id-panel_pane view-dom-id-66320efbf49885d5777c28af0624a7f7"&gt;
+&lt;div class="view-content"&gt;
+&lt;div class="views-row views-row-1 views-row-odd views-row-first views-row-last"&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;Gold Coast&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="attachment attachment-after"&gt;
+&lt;div class="view view-surf-reports view-id-surf_reports view-display-id-latest_report"&gt;
+&lt;div class="view-content"&gt;
+&lt;div class="views-row views-row-1 views-row-odd views-row-first views-row-last"&gt;
+&lt;span class="views-field views-field-field-surf-report-date"&gt; &lt;span class="views-label views-label-field-surf-report-date"&gt;Updated: &lt;/span&gt; &lt;span class="field-content"&gt;2016-12-05 14:05:00&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-nothing"&gt; &lt;span class="views-label views-label-nothing"&gt;Surf: &lt;/span&gt; &lt;span class="field-content"&gt;choppy 2ft NNE   &lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-wind"&gt; &lt;span class="views-label views-label-field-surf-report-wind"&gt;Winds: &lt;/span&gt; &lt;span class="field-content"&gt;Fresh NNE&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-weather"&gt; &lt;span class="views-label views-label-field-surf-report-weather"&gt;Weather: &lt;/span&gt; &lt;span class="field-content"&gt;fine&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-rating"&gt; &lt;span class="views-label views-label-field-surf-report-rating"&gt;Rating: &lt;/span&gt; &lt;span class="field-content"&gt;2/10&lt;/span&gt; &lt;/span&gt;
+&lt;div class="views-field views-field-body"&gt; &lt;div class="field-content"&gt;&lt;p&gt;Afternoon report: As per the last few afternoons the northerly windswell is on the build again with the afternoon breeze.&lt;/p&gt;
+&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="view view-surf-reports view-id-surf_reports view-display-id-older"&gt;
+&lt;div class="view-content"&gt;
+&lt;div class="views-row views-row-1 views-row-odd views-row-first"&gt;
+&lt;span class="views-field views-field-field-surf-report-date"&gt; &lt;span class="field-content"&gt;2016-12-05 07:51:00:&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-nothing"&gt; &lt;span class="field-content"&gt;choppy 1-1.5ft NE,   &lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-wind"&gt; &lt;span class="field-content"&gt;Moderate NE,&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-weather"&gt; &lt;span class="field-content"&gt;partly cloudy&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-rating"&gt; &lt;span class="field-content"&gt;2/10&lt;/span&gt; &lt;/span&gt;
+&lt;div class="views-field views-field-body"&gt; &lt;div class="field-content"&gt;&lt;p&gt;Only 1-1.5ft of windswell on offer at exposed locations and with the wind up blowing fairly strong from the NE it's not looking very inviting. Really only for the groms or the learners. Enjoy your day.&lt;/p&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;div class="views-row views-row-2 views-row-even views-row-last"&gt;
+&lt;span class="views-field views-field-field-surf-report-date"&gt; &lt;span class="field-content"&gt;2016-12-05 04:13:00:&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-nothing"&gt; &lt;span class="field-content"&gt;peaky 1-2ft NE,   &lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-wind"&gt; &lt;span class="field-content"&gt;Light N,&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-weather"&gt; &lt;span class="field-content"&gt;fine&lt;/span&gt; &lt;/span&gt;
+&lt;span class="views-field views-field-field-surf-report-rating"&gt; &lt;span class="field-content"&gt;2/10&lt;/span&gt; &lt;/span&gt;
+&lt;div class="views-field views-field-body"&gt; &lt;div class="field-content"&gt;&lt;p&gt;Dawn report: It's like a broken record 'round here, small NE windswell and light N'ly winds ahead of a freshening trend during the day. Not much to get excited about but there are some small peaks for the grommets. Tune back in for the updated photo report around 8am.&lt;/p&gt;
+&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-views-panes pane-surf-reports-photos"&gt;
+&lt;div class="view view-surf-reports view-id-surf_reports view-display-id-photos view-dom-id-3b92df6e9bd8be89b052a8addb850a9a"&gt;
+&lt;div class="view-header"&gt;
+      Daily Photos:    &lt;/div&gt;
+&lt;div class="view-content"&gt;
+&lt;div class="views-row views-row-1 views-row-odd views-row-first"&gt;
+&lt;/div&gt;
+&lt;div class="views-row views-row-2 views-row-even"&gt;
+&lt;div class="views-field views-field-field-surf-report-images"&gt; &lt;div class="field-content"&gt;&lt;div class="field field-name-field-surf-report-images field-type-file field-label-hidden"&gt;&lt;div class="field-items"&gt;&lt;div class="field-item even"&gt;&lt;a class="fresco" data-fresco-group="unique_name" data-fresco-group-options="thumbnails:false" href="http://www.swellnet.com/sites/default/files/styles/swellnet_large_1000x667/public/surf-reports/images/img_1505_0.jpg?itok=NmY4fvQe"&gt;&lt;div class="ds-1col file file-image file-image-jpeg view-mode-gallery_teaser_postcard clearfix"&gt;
+&lt;img alt="" height="218" src="http://www.swellnet.com/sites/default/files/styles/swellnet_postcard_330x218/public/surf-reports/images/img_1505_0.jpg?itok=UOCY5cB-" width="330" /&gt;&lt;/div&gt;
+&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;div class="views-row views-row-3 views-row-odd views-row-last"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-block pane-boxes-shapers-directory-unit-gold-coas block-boxes-simple "&gt;
+&lt;h2 class="pane-title"&gt;Local Shaper Directory&lt;/h2&gt;
+&lt;div class="boxes-box" id="boxes-box-shapers_directory_unit_gold_coas"&gt;&lt;div class="boxes-box-content"&gt;&lt;!-- Shapers Directory Unit - Gold Coast --&gt;
+&lt;script src="https://www.googletagservices.com/tag/js/gpt.js"&gt;
+      googletag.pubads().definePassback('/8349402/shapers-directory_gc', [105, 354]).display();
+    &lt;/script&gt;
+&lt;script src="https://www.googletagservices.com/tag/js/gpt.js"&gt;
+      googletag.pubads().definePassback('/8349402/shapers-directory_gc', [105, 354]).display();
+    &lt;/script&gt;
+&lt;script src="https://www.googletagservices.com/tag/js/gpt.js"&gt;
+      googletag.pubads().definePassback('/8349402/shapers-directory_gc', [105, 354]).display();
+    &lt;/script&gt;
+&lt;script src="https://www.googletagservices.com/tag/js/gpt.js"&gt;
+      googletag.pubads().definePassback('/8349402/shapers-directory_gc', [105, 354]).display();
+    &lt;/script&gt;
+&lt;script src="https://www.googletagservices.com/tag/js/gpt.js"&gt;
+      googletag.pubads().definePassback('/8349402/shapers-directory_gc', [105, 354]).display();
+    &lt;/script&gt;
+&lt;script src="https://www.googletagservices.com/tag/js/gpt.js"&gt;
+      googletag.pubads().definePassback('/8349402/shapers-directory_gc', [105, 354]).display();
+    &lt;/script&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-views-panes pane-nearest-observed-surf-reports-nearest-observed-surf-reports"&gt;
+&lt;div class="view view-nearest-observed-surf-reports view-id-nearest_observed_surf_reports view-display-id-nearest_observed_surf_reports view-dom-id-5f35b79b87b86b09c1450d16fc7cc343"&gt;
+&lt;div class="view-header"&gt;
+      Nearest Observed Surf Reports:    &lt;/div&gt;
+&lt;div class="view-content"&gt;
+&lt;div class="views-row views-row-1 views-row-odd views-row-first"&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;&lt;a href="/reports/australia/new-south-wales/ballina"&gt;Ballina&lt;/a&gt;&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;div class="views-row views-row-2 views-row-even"&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;&lt;a href="/reports/australia/new-south-wales/yamba"&gt;Yamba&lt;/a&gt;&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;div class="views-row views-row-3 views-row-odd views-row-last"&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;&lt;a href="/reports/australia/queensland/sunshine-coast"&gt;Sunshine Coast&lt;/a&gt;&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-views-panes pane-nearest-surfcams-nearest-surfcams"&gt;
+&lt;div class="view view-nearest-surfcams view-id-nearest_surfcams view-display-id-nearest_surfcams view-dom-id-c2c4207be422242709a162ed55776445"&gt;
+&lt;div class="view-header"&gt;
+      Nearest Surfcams:    &lt;/div&gt;
+&lt;div class="view-content"&gt;
+&lt;div class="views-row views-row-1 views-row-odd views-row-first"&gt;
+&lt;div class="views-field views-field-static-image"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/burleigh-heads"&gt;&lt;img alt="Burleigh Heads" src="http://static.swellnet.com.au/images/surfcams/burleigh-heads-thumb.jpg" title="Burleigh Heads" /&gt;&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/burleigh-heads"&gt;Burleigh Heads&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-field-geofield-distance"&gt; &lt;span class="field-content"&gt;4.86302231413628&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;div class="views-row views-row-2 views-row-even"&gt;
+&lt;div class="views-field views-field-static-image"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/greenmount"&gt;&lt;img alt="Greenmount" src="http://static.swellnet.com.au/images/surfcams/greenmount-thumb.jpg" title="Greenmount" /&gt;&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/greenmount"&gt;Greenmount&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-field-geofield-distance"&gt; &lt;span class="field-content"&gt;12.45182885713013&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;div class="views-row views-row-3 views-row-odd"&gt;
+&lt;div class="views-field views-field-static-image"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/snapper-rocks"&gt;&lt;img alt="Snapper Rocks" src="http://static.swellnet.com.au/images/surfcams/snapper-rocks-thumb.jpg" title="Snapper Rocks" /&gt;&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/snapper-rocks"&gt;Snapper Rocks&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-field-geofield-distance"&gt; &lt;span class="field-content"&gt;12.53219647665651&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;div class="views-row views-row-4 views-row-even views-row-last"&gt;
+&lt;div class="views-field views-field-static-image"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/duranbah"&gt;&lt;img alt="Duranbah" src="http://static.swellnet.com.au/images/surfcams/duranbah-thumb.jpg" title="Duranbah" /&gt;&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-title"&gt; &lt;span class="field-content"&gt;&lt;a href="/surfcams/duranbah"&gt;Duranbah&lt;/a&gt;&lt;/span&gt; &lt;/div&gt;
+&lt;div class="views-field views-field-field-geofield-distance"&gt; &lt;span class="field-content"&gt;13.76547396984851&lt;/span&gt; &lt;/div&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-swellnet-location-report-pane"&gt;
+&lt;div class="report-summary"&gt;
+&lt;div class="report-part report-surf"&gt;
+&lt;label&gt;Model Estimated Surf Size (6pm)&lt;/label&gt;
+&lt;div class="surf"&gt;
+&lt;span class="height"&gt;2ft&lt;/span&gt;
+&lt;span class="description"&gt;(Waist-Shoulder High)&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="report-part report-fancy report-wind"&gt;
+&lt;div class="arrow"&gt;
+&lt;span style="font-size: 20px; left: 8px; top: 5px;  color: #ffffff; transform: rotate(174deg); -webkit-transform: rotate(174deg); -ms-transform: rotate(174deg);"&gt;A&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;label&gt;Live Winds ( 21:20)&lt;/label&gt;
+&lt;span&gt;
+                  N 15kt
+              &lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="report-part report-trains"&gt;
+&lt;label&gt;Swell Trains&lt;/label&gt;
+&lt;div&gt;
+&lt;label&gt;Primary:&lt;/label&gt;
+&lt;span class="amount"&gt;1.7&lt;/span&gt;
+&lt;span class="unit"&gt;m&lt;/span&gt;
+&lt;span&gt;@&lt;/span&gt;
+&lt;span class="period"&gt;5.3s&lt;/span&gt;
+&lt;span class="direction"&gt;N (8°)&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;label&gt;Secondary:&lt;/label&gt;
+&lt;span class="amount"&gt;0.3&lt;/span&gt;
+&lt;span class="unit"&gt;m&lt;/span&gt;
+&lt;span&gt;@&lt;/span&gt;
+&lt;span class="period"&gt;11.1s&lt;/span&gt;
+&lt;span class="direction"&gt;NE (52°)&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="report-part report-fancy report-weather"&gt;
+&lt;img alt="Sunny" src="/profiles/swellnet/themes/swellzen/images/weather/sunny.gif" /&gt;
+&lt;div&gt;
+&lt;label&gt;Weather&lt;/label&gt;
+&lt;span class="description"&gt;Sunny&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="report-part report-sun"&gt;
+&lt;label&gt;Sunset / Sunrise&lt;/label&gt;
+&lt;div&gt;
+&lt;span&gt;First light: 4:15am&lt;/span&gt;
+&lt;span&gt;Sunrise: 4:41am&lt;/span&gt;
+&lt;span&gt;Sunset: 6:32pm&lt;/span&gt;
+&lt;span&gt;Last light: 6:59pm&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="report-part report-fancy report-temperature"&gt;
+&lt;div class="current"&gt;
+&lt;span&gt;22&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;label&gt;Air Temperature&lt;/label&gt;
+&lt;span&gt;Current: 22.5 (9:20pm)&lt;/span&gt;
+&lt;span&gt;Min: 21℃ - Max: 28℃&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="element-invisible" id="wind-station-name"&gt;&lt;/div&gt;
+&lt;div class="report-wind-history"&gt;
+&lt;label&gt;Wind History&lt;/label&gt;
+&lt;div&gt;
+&lt;svg&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="element-invisible" id="weather-station-name"&gt;Coolangatta&lt;/div&gt;
+&lt;div class="report-tide-prediction"&gt;
+&lt;label&gt;Tide Prediction&lt;/label&gt;
+&lt;div&gt;
+&lt;svg&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="layout-sixthree section panel-right"&gt;
+&lt;div class="panel-pane pane-block pane-search-form"&gt;
+&lt;form accept-charset="UTF-8" action="/reports/australia/queensland/gold-coast" id="search-block-form" method="post"&gt;&lt;div&gt;&lt;div class="container-inline"&gt;
+&lt;h2 class="element-invisible"&gt;Search form&lt;/h2&gt;
+&lt;div class="form-item form-type-textfield form-item-search-block-form"&gt;
+&lt;label class="element-invisible" for="edit-search-block-form--2"&gt;Search &lt;/label&gt;
+&lt;input class="form-text" id="edit-search-block-form--2" maxlength="128" name="search_block_form" size="15" title="Enter the terms you wish to search for." type="text" value="" /&gt;
+&lt;/div&gt;
+&lt;div class="form-actions form-wrapper" id="edit-actions"&gt;&lt;input class="form-submit" id="edit-submit" name="op" type="submit" value="Go" /&gt;&lt;/div&gt;&lt;input name="form_build_id" type="hidden" value="form-CjO3Be4yGcQHYbdcVshkD5ie40joxHgyOopZqhfJdCY" /&gt;
+&lt;input name="form_id" type="hidden" value="search_block_form" /&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/form&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-block pane-boxes-swellnet-adblock-mrec block-boxes-simple"&gt;
+&lt;div class="boxes-box" id="boxes-box-swellnet_adblock_mrec"&gt;&lt;div class="boxes-box-content"&gt;&lt;span class="mcnamf" title="300x250"&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="panel-pane pane-block pane-boxes-swellnet-adblock-halfisland block-boxes-simple"&gt;
+&lt;div class="boxes-box" id="boxes-box-swellnet_adblock_halfisland"&gt;&lt;div class="boxes-box-content"&gt;&lt;span class="mcnamf" title="300x125"&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt; &lt;/div&gt; &lt;!-- /#main --&gt;
+&lt;/div&gt;
+&lt;/div&gt; &lt;!-- /#page --&gt;
+&lt;div id="page-footer"&gt; &lt;/div&gt; &lt;!-- sticky-footer artefact --&gt;
+&lt;/div&gt;
+&lt;footer id="footer" role="contentinfo"&gt;
+&lt;div id="footer-content"&gt;
+&lt;div class="block block-menu-block first odd" id="block-menu-block-1" role="navigation"&gt;
+&lt;h2 class="block__title block-title"&gt;Main menu&lt;/h2&gt;
+&lt;div class="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1"&gt;
+&lt;ul class="menu"&gt;&lt;li class="menu__item is-leaf first leaf menu-mlid-3561" id="nav-home"&gt;&lt;a class="menu__link" href="/welcome" title="Home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf menu-mlid-420" id="nav-surf-reports-and-forecasts"&gt;&lt;a class="menu__link" href="/reports"&gt;Surf Reports &amp;amp; Forecasts&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf menu-mlid-421" id="nav-surfcams"&gt;&lt;a class="menu__link" href="/surfcams"&gt;Surfcams&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf menu-mlid-417" id="nav-news"&gt;&lt;a class="menu__link" href="/news"&gt;News&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf menu-mlid-418" id="nav-photos"&gt;&lt;a class="menu__link" href="/photos"&gt;Photos&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf last leaf menu-mlid-411" id="nav-forum"&gt;&lt;a class="menu__link" href="/forum" title=""&gt;Forum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="block block-menu even" id="block-menu-menu-miscellaneous-pages" role="navigation"&gt;
+&lt;h2 class="block__title block-title"&gt;Miscellaneous pages&lt;/h2&gt;
+&lt;ul class="menu"&gt;&lt;li class="menu__item is-leaf first leaf" id="nav-privacy-policy"&gt;&lt;a class="menu__link" href="/privacy"&gt;Privacy policy&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf" id="nav-terms-and-conditions"&gt;&lt;a class="menu__link" href="/terms"&gt;Terms and Conditions&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf" id="nav-contact-us"&gt;&lt;a class="menu__link" href="/contact" title=""&gt;Contact us&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf last leaf" id="nav-about-swellnet"&gt;&lt;a class="menu__link" href="/about"&gt;About Swellnet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="block block-menu odd" id="block-menu-menu-user-menu-secondary" role="navigation"&gt;
+&lt;h2 class="block__title block-title"&gt;User menu secondary&lt;/h2&gt;
+&lt;ul class="menu"&gt;&lt;li class="menu__item is-leaf first leaf" id="nav-my-account"&gt;&lt;a class="menu__link" href="/user" title=""&gt;My account&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf leaf" id="nav-register"&gt;&lt;a class="menu__link" href="/user/register" title=""&gt;Register&lt;/a&gt;&lt;/li&gt;
+&lt;li class="menu__item is-leaf last leaf" id="nav-forgot-password"&gt;&lt;a class="menu__link" href="/user/password" title=""&gt;Forgot password&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="block block-boxes block-boxes-simple last even" id="block-boxes-swellnet-footer-colophon"&gt;
+&lt;div class="boxes-box" id="boxes-box-swellnet_footer_colophon"&gt;&lt;div class="boxes-box-content"&gt;&lt;img src="//www.swellnet.com/profiles/swellnet/themes/swellzen/images/swellnet-logo-white.png" title="Swellnet" /&gt;
+&lt;p&gt;© Swellnet 2016. All rights reserved.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+&lt;script type="text/javascript"&gt;
+  var _sf_async_config=Drupal.settings.chartbeat;
+  (function(){
+    function loadChartbeat() {
+      window._sf_endpt=(new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+         (("https:" == document.location.protocol) ? "https://s3.amazonaws.com/" : "http://") +
+         "static.chartbeat.com/js/chartbeat.js");
+      document.body.appendChild(e);
+    }
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+       loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+&lt;/script&gt;
+&lt;!-- Begin MCN ad code --&gt;
+&lt;script type="text/javascript"&gt;
+    (function(){var e=document.createElement("script"),protocol = "https:" == document.location.protocol ? "https:" : "http:";e.async=true;e.src=protocol+"//medrx.sensis.com.au/mcn/cube.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n);})();window._mcn={};_mcn.config=[];
+    _mcn.config.push(function(){
+      _mcn.publisher("swellnet");
+      _mcn.amf.postLoadAdCall(true);
+      _mcn.amf.targeting("area", "reports/australia/queensland/gold-coast");
+    });
+  &lt;/script&gt;
+&lt;!-- End MCN ad code --&gt;
+&lt;!-- BEGIN EFFECTIVE MEASURE CODE --&gt;
+&lt;!-- BEGIN EFFECTIVE MEASURE CODE --&gt;
+&lt;!-- COPYRIGHT EFFECTIVE MEASURE --&gt;
+&lt;script type="text/javascript"&gt;
+    //&lt;![CDATA[
+      (function() {
+        var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true;
+        em.src = ('https:' == document.location.protocol ? 'https://au-ssl' : 'http://au-cdn') + '.effectivemeasure.net/em.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s);
+      })();
+    //]]&gt;
+  &lt;/script&gt;
+&lt;noscript&gt;
+&lt;img alt="" src="//au.effectivemeasure.net/em_image" style="position:absolute; left:-5px;" /&gt;
+&lt;/noscript&gt;
+&lt;!-- END EFFECTIVE MEASURE CODE --&gt;
+&lt;!-- START Nielsen Online SiteCensus V6.0 --&gt;
+&lt;!-- COPYRIGHT 2012 Nielsen Online --&gt;
+&lt;script src="//secure-au.imrworldwide.com/v60.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    //&lt;![CDATA[
+      //
+        var pvar = { cid: "mcn", content: "swellnet", server: "secure-au" };  var trac = nol_t(pvar);  trac.record().post();
+      //
+    //]]&gt;
+  &lt;/script&gt;
+&lt;noscript&gt;
+&lt;div&gt;
+&lt;img alt="" height="1" src="//secure-au.imrworldwide.com/cgi-bin/m?ci=mcn&amp;amp;cg=swellnet&amp;amp;cc=1&amp;amp;ts=noscript" width="1" /&gt;
+&lt;/div&gt;
+&lt;/noscript&gt;
+&lt;!-- END Nielsen Online SiteCensus V6.0 --&gt;
+&lt;script src="/profiles/swellnet/themes/zen/../swellzen/js/lib/mustache/mustache.js"&gt;&lt;/script&gt;
+&lt;script src="/profiles/swellnet/themes/zen/../swellzen/js/dropdown-menu.js"&gt;&lt;/script&gt;
+&lt;link href="/profiles/swellnet/themes/zen/../swellzen/css/jumboMenu.css" rel="stylesheet"&gt;
+&lt;/link&gt;
+
+
+
+
+
+
+
+
+
+
+In [39]:
+
+
+report_section = parser.select(".field-content")
+
+
+
+
+
+
+
+In [40]:
+
+
+report_section
+
+
+
+
+
+
+Out[40]:
+
+[Gold Coast,
+ 2016-12-05 14:05:00,
+ choppy 2ft NNE   ,
+ Fresh NNE,
+ fine,
+ 2/10,
+ Afternoon report: As per the last few afternoons the northerly windswell is on the build again with the afternoon breeze.\n,
+ 2016-12-05 07:51:00:,
+ choppy 1-1.5ft NE,   ,
+ Moderate NE,,
+ partly cloudy,
+ 2/10,
+ Only 1-1.5ft of windswell on offer at exposed locations and with the wind up blowing fairly strong from the NE it's not looking very inviting. Really only for the groms or the learners. Enjoy your day.,
+ 2016-12-05 04:13:00:,
+ peaky 1-2ft NE,   ,
+ Light N,,
+ fine,
+ 2/10,
+ Dawn report: It's like a broken record 'round here, small NE windswell and light N'ly winds ahead of a freshening trend during the day. Not much to get excited about but there are some small peaks for the grommets.\xa0Tune back in for the updated photo report around 8am.\n,
+ \n\n,
+ Ballina,
+ Yamba,
+ Sunshine Coast,
+ ,
+ Burleigh Heads,
+ 4.86302231413628,
+ ,
+ Greenmount,
+ 12.45182885713013,
+ ,
+ Snapper Rocks,
+ 12.53219647665651,
+ ,
+ Duranbah,
+ 13.76547396984851]
+
+
+
+
+
+
+
+In [41]:
+
+
+report_labels = parser.select(".views-label")
+
+
+
+
+
+
+
+In [46]:
+
+
+print(report_labels[4].text)
+
+
+
+
+
+
+
+
+Rating: 
+
+
+
+
+
+
+
+
+In [47]:
+
+
+report_labels
+
+
+
+
+
+
+Out[47]:
+
+[Updated: ,
+ Surf: ,
+ Winds: ,
+ Weather: ,
+ Rating: ]
+
+
+
+
+
+
+
+In [95]:
+
+
+rating_label = parser.select(".views-field-field-surf-report-rating")
+# This narrows down to raitings
+
+
+
+
+
+
+
+In [57]:
+
+
+rating_label
+
+
+
+
+
+
+Out[57]:
+
+[ Rating:  2/10 ,
+  3/10 ,
+  2/10 ]
+
+
+
+
+
+
+
+In [65]:
+
+
+rating_all = rating_label[1].select(".field-content")
+rating_all[0]
+
+
+
+
+
+
+Out[65]:
+
+3/10
+
+
+
+
+
+
+
+In [62]:
+
+
+type(rating_label)
+
+
+
+
+
+
+Out[62]:
+
+list
+
+
+
+
+
+
+
+In [63]:
+
+
+len(rating_label)
+
+
+
+
+
+
+Out[63]:
+
+3
+
+
+
+
+
+
+
+In [97]:
+
+
+print("Today's ratings are:")
+for rating in xrange(0,len(rating_label)):
+    time = report_times[rating].select(".field-content")[0].text
+    rating = rating_label[rating].select(".field-content")[0].text
+    print(time)
+    print(rating)
+
+
+
+
+
+
+
+
+Today's ratings are:
+2016-12-05 07:27:00
+1/10
+
+
+
+
+
+
+
+
+In [72]:
+
+
+xrange(1parser = BeautifulSoup(content, 'html.parser'),len(rating_label))
+
+
+
+
+
+
+Out[72]:
+
+xrange(1, 3)
+
+
+
+
+
+
+
+In [73]:
+
+
+print xrange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In [96]:
+
+
+report_times = parser.select(".views-field-field-surf-report-date")
+report_times
+
+
+
+
+
+
+Out[96]:
+
+[ Updated:  2016-12-05 07:27:00 ]
+
+
+
+
+
+
+
+In [83]:
+
+
+report_times[0].select(".field-content")[0].text
+
+
+
+
+
+
+Out[83]:
+
+u'2016-12-05 14:56:00'
+
+
+
+
+
+
+
+In [5]:
+
+
+def getRating(swellnet_website):
+    response = requests.get(swellnet_website)
+    content = response.content
+    parser = BeautifulSoup(content, 'html.parser')
+    rating_label = parser.select(".views-field-field-surf-report-rating")
+    report_times = parser.select(".views-field-field-surf-report-date")
+    
+    print("Today's ratings are:")
+    
+    for rating in xrange(0,len(rating_label)):
+        time = report_times[rating].select(".field-content")[0].text
+        rating = rating_label[rating].select(".field-content")[0].text
+        print(time)
+        print(rating)
+
+
+
+
+
+
+
+In [6]:
+
+
+getRating('http://www.swellnet.com/reports/australia/queensland/gold-coast')
+
+
+
+
+
+
+
+
+Today's ratings are:
+2016-12-28 07:50:00
+3/10
+2016-12-28 04:50:00:
+4/10
+
+
+
+
+
+
+
+
+In [ ]:
+
+
+ 
+
+
+
+
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</summary><category term="python firsts"></category></entry></feed>

@@ -1,3 +1,0 @@
-# Slogger
-
-Blahhhhhh
